@@ -27,7 +27,7 @@ for(let i = 0; i < updatingElements.length; i++) {
 
 let text = ['About Me', 'Projects'];
 
-let speed = 50;
+let speed = 150;
 let index = 0;
 
 const typeWriter = (element, text, currentIndex) => {
