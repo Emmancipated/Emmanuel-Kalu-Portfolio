@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200&family=Martel&family=Staatliches&display=swap" rel="stylesheet">
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
   <title>Emmanuel Kalu</title>
 </head>
 <body>
@@ -27,7 +30,8 @@
     <div class="divider">
       <section id="hero">
         <div class="hero-image">
-          <img src="img/Untitled design.jpg" alt="emmanuel-kalu">
+          <!-- <img src="img/Untitled design.jpg" alt="emmanuel-kalu"> -->
+          <canvas id="renderCanvas"></canvas>
         </div>
         <h1 class="header">Hi, I am Emmanuel <span class="surname">Kalu</span></h1>
         <h3>A skilled web developer with passion for creating visually stunning and highly functional websites.</h3>
@@ -122,120 +126,120 @@
               </div>
             </div>
 
-          <div class="project-card">
-            <div class="content">
-              <div class="front" style="background-image: url('img/Rectangle\ 301.png')">
-                <div class="inner">
-                  <h2>Artsy</h2>
-                  <div class="tools">
-                    <h4>React</h4>
-                    <h4>Redux</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="back">
-                <div class="inner">
-                  <div class="description">
-                    <p>My designed ecommerce website offers a personalized, 
-                      easy-to-use platform for customers to purchase a wide 
-                      range of products with advanced search options, fast 
-                      shipping and secure checkout.
-                    </p>
-                  </div>
-                  <div class="project-links">
-                    <a target="_blank" href="https://github.com/Emmancipated/Artsy">Source Code</a>
-                    <a target="_blank" href="https://master--dynamic-meringue-bc6b20.netlify.app/">Live link</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="project-card">
-            <div class="content">
-              <div class="front" style="background-image: url('img/graciousinfinity.jpg')">
+            <div class="project-card">
+              <div class="content">
+                <div class="front" style="background-image: url('img/Rectangle\ 301.png')">
                   <div class="inner">
-                    <h2>Gracious Farm</h2>
+                    <h2>Artsy</h2>
                     <div class="tools">
-                      <h4>Html</h4>
-                      <h4>Css</h4>
-                      <h4>Javascript</h4>
+                      <h4>React</h4>
+                      <h4>Redux</h4>
                     </div>
                   </div>
-              </div>
-              <div class="back">
+                </div>
+                <div class="back">
                   <div class="inner">
                     <div class="description">
-                      <p>The agricultural website I developed offers a convenient platform 
-                        for customers to purchase a wide range of agricultural products, with 
-                        advanced search options and fast shipping. It also has a user-friendly 
-                        interface and secure checkout process.
+                      <p>My designed ecommerce website offers a personalized, 
+                        easy-to-use platform for customers to purchase a wide 
+                        range of products with advanced search options, fast 
+                        shipping and secure checkout.
                       </p>
                     </div>
                     <div class="project-links">
-                      <a target="_blank" href="https://github.com/Emmancipated/graciousinfinity">Source Code</a>
-                      <a target="_blank" href="https://emmancipated.github.io/graciousinfinity/">Live link</a>
+                      <a target="_blank" href="https://github.com/Emmancipated/Artsy">Source Code</a>
+                      <a target="_blank" href="https://master--dynamic-meringue-bc6b20.netlify.app/">Live link</a>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
-          </div>
   
-          <div class="project-card">
-            <div class="content">
-              <div class="front" style="background-image: url('img/ripple-blog.png')">
+            <div class="project-card">
+              <div class="content">
+                <div class="front" style="background-image: url('img/graciousinfinity.jpg')">
                     <div class="inner">
-                      <h2>Ripple Blog</h2>
+                      <h2>Gracious Farm</h2>
                       <div class="tools">
-                        <h4>React</h4>
+                        <h4>Html</h4>
+                        <h4>Css</h4>
+                        <h4>Javascript</h4>
                       </div>
                     </div>
-              </div>
-              <div class="back">
+                </div>
+                <div class="back">
                     <div class="inner">
                       <div class="description">
-                        <p>This is blog site feeding off from techcrunch api for contents and 
-                          up to date with all the tech news. It is a user friendly and fast website.
+                        <p>The agricultural website I developed offers a convenient platform 
+                          for customers to purchase a wide range of agricultural products, with 
+                          advanced search options and fast shipping. It also has a user-friendly 
+                          interface and secure checkout process.
                         </p>
                       </div>
                       <div class="project-links">
-                        <a target="_blank" href="https://github.com/Emmancipated/flutterwave-project">Source Code</a>
-                        <a target="_blank" href="https://papaya-sunflower-c713c1.netlify.app/">Live link</a>
+                        <a target="_blank" href="https://github.com/Emmancipated/graciousinfinity">Source Code</a>
+                        <a target="_blank" href="https://emmancipated.github.io/graciousinfinity/">Live link</a>
                       </div>
                     </div>
+                </div>
               </div>
             </div>
-          </div>
   
-          <div class="project-card">
-            <div class="content">
-              <div class="front" style="background-image: url('img/Rectangle\ 239.png')">
+            <div class="project-card">
+              <div class="content">
+                <div class="front" style="background-image: url('img/ripple-blog.png')">
                       <div class="inner">
-                        <h2>Fizz-Bizz</h2>
+                        <h2>Ripple Blog</h2>
                         <div class="tools">
-                          <h4>MongoDB</h4>
-                          <h4>Express</h4>
-                          <h4>NodeJs</h4>
-                          <h4>Html</h4>
+                          <h4>React</h4>
                         </div>
                       </div>
-              </div>
-              <div class="back">
+                </div>
+                <div class="back">
                       <div class="inner">
                         <div class="description">
-                          <p>Join our vibrant community on our forum website, where users 
-                            can discuss a variety of topics and share their ideas and experiences. 
-                            Create an account and start participating today!
+                          <p>This is blog site feeding off from techcrunch api for contents and 
+                            up to date with all the tech news. It is a user friendly and fast website.
                           </p>
                         </div>
                         <div class="project-links">
-                          <a target="_blank" href="https://github.com/Emmancipated/fizzbizz-forum">Source Code</a>
-                          <a target="_blank" href="https://fizzbizz-forum.herokuapp.com/">Live link</a>
+                          <a target="_blank" href="https://github.com/Emmancipated/flutterwave-project">Source Code</a>
+                          <a target="_blank" href="https://papaya-sunflower-c713c1.netlify.app/">Live link</a>
                         </div>
                       </div>
+                </div>
               </div>
             </div>
-          </div>
+  
+            <div class="project-card">
+              <div class="content">
+                <div class="front" style="background-image: url('img/Rectangle\ 239.png')">
+                        <div class="inner">
+                          <h2>Fizz-Bizz</h2>
+                          <div class="tools">
+                            <h4>MongoDB</h4>
+                            <h4>Express</h4>
+                            <h4>NodeJs</h4>
+                            <h4>Html</h4>
+                          </div>
+                        </div>
+                </div>
+                <div class="back">
+                        <div class="inner">
+                          <div class="description">
+                            <p>Join our vibrant community on our forum website, where users 
+                              can discuss a variety of topics and share their ideas and experiences. 
+                              Create an account and start participating today!
+                            </p>
+                          </div>
+                          <div class="project-links">
+                            <a target="_blank" href="https://github.com/Emmancipated/fizzbizz-forum">Source Code</a>
+                            <a target="_blank" href="https://fizzbizz-forum.herokuapp.com/">Live link</a>
+                          </div>
+                        </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
