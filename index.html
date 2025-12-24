@@ -1,265 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href='https://css.gg/twitter.css' rel='stylesheet'>
-  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  <title>Emmanuel Kalu | Full Stack Developer</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200&family=Martel&family=Staatliches&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700;800&display=swap"
+    rel="stylesheet">
+
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   <script src="https://cdn.babylonjs.com/babylon.js"></script>
   <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-  <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-  <title>Emmanuel Kalu</title>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+        "cannon-es": "https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js"
+      }
+    }
+  </script>
+
+  <!-- <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script> -->
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <nav class="glass-nav">
+    <h1 class="logo">EK<span class="dot">.</span></h1>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contacts">Contact</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <nav>
-      <h1 class="logo">Emmanue&lt;<span id="logo">/</span>&gt;</h1>
-      <ul>
-        <li> <a href="#about"> About</a></li>
-        <li> <a href="#projects"> Projects</a></li>
-        <li> <a href="#contacts"> Contacts</a></li>
-      </ul>
-    </nav>
+    <section id="hero">
+      <div class="hero-content">
+        <h3 class="subtitle">Hello, I'm</h3>
+        <h1 class="title">Emmanuel <span class="highlight">Kalu</span></h1>
+        <h2 class="role">I build <span class="typewriter"></span><span class="cursor">|</span></h2>
+        <p class="description">A skilled web developer with a passion for creating visually stunning and highly
+          functional digital experiences.</p>
 
-    <div class="divider">
-      <section id="hero">
-        <div class="hero-image">
-          <!-- <img src="img/Untitled design.jpg" alt="emmanuel-kalu"> -->
-          <canvas id="renderCanvas"></canvas>
+        <div class="hero-btns">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contacts" class="btn secondary">Get In Touch</a>
         </div>
-        <h1 class="header">Hi, I am Emmanuel <span class="surname">Kalu</span></h1>
-        <h3>A skilled web developer with passion for creating visually stunning and highly functional websites.</h3>
-        <span>&lt; <span id="">/</span> &gt;</span>
-        <div class="hero-contacts">
-          <div class="icon twitter"><a target="_blank" href="https://mobile.twitter.com/emmancipatedOne"><i class="icon ion-logo-twitter"></i></a></div>
-          <div class="icon github"><a target="_blank" href="https://github.com/Emmancipated"><i class="icon ion-logo-github"></i></a></div>
-          <div class="icon linkedin"><a target="_blank" href="https://www.linkedin.com/in/emmanuel-kalu-811b14194/"><i class="icon ion-logo-linkedin"></i></a></div>
-          <div class="icon email"><a href="mailto: emmanuelkaluck@gmail.com"><i class="icon ion-md-mail"></i></a></div>
-        </div>
-      </section>
-      <div class="display-container">
-        <section id="about">
-          <h2 class="animated-headers updating"></h2>
-          <p>
-            I am a self-motivated and hardworking individual
-            who is passionate about web development and technology.
-            I have a strong attention to detail and am dedicated to 
-            delivering high-quality work to my clients. I am also a
-            good team player and always willing to learn new skills
-            and technology.
-          </p>
-          <p>
-            If you are in need of a new website or have an existing
-            website that needs an upgrade, please do not hesistate 
-            to contact me via any of my contact below the page.
-            I will be happy to discuss your project and help your 
-            vision to life.
-          </p>
-          <h3>Stacks</h3>
-          <p>Among the stack and technologies I use include;</p>
-          <div class="stacks">
-            <div class="stack html">
-                <img src="img/html5.webp" alt="html">
-              <h3>HTML</h3> 
-            </div>
-            <div class="stack css"> 
-              <img src="img/css.png" alt="html">
-              <h3>CSS</h3>
-            </div>
-            <div class="stack sass">
-              <img src="img/scss.png" alt="scss">
-              <h3>SASS / LESS</h3>
-            </div>
-            <div class="stack javascript">
-              <img src="img/js.png" alt="javascript">
-              <h3>Javascript</h3>
-            </div>
-            <div class="stack react">
-              <img src="img/react.png" alt="react">
-              <h3>React</h3>
-            </div>
-            <div class="stack git">
-              <img src="img/git.png" alt="git">
-              <h3>Git</h3>
-            </div>
-          </div>
-        </section>
-
-        <section id="projects">
-          <h2 class="animated-headers updating"></h2>
-          <p>
-            Please take a look at some of my completed projects
-          </p>
-          <div class="project-container">
-            <div class="project-card">
-              <div class="content">
-                <div class="front" style="background-image: url('img/khloe-arledge-ND3edEmzcdQ-unsplash.png')">
-                  <div class="inner">
-                    <h2>Meal More</h2>
-                    <div class="tools">
-                      <h4>React</h4>
-                      <h4>Redux</h4>
-                      <h4>Scss</h4>
-                      <h4>Framer-motion</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="back">
-                  <div class="inner">
-                    <div class="description">
-                      <p>Beautifully desgned recipe website, where you can learn how to
-                        prepare any type of delicacy, via text and video instructions.
-                      </p>
-                    </div>
-                    <div class="project-links">
-                      <a target="_blank" href="https://github.com/Emmancipated/mealmore">Source Code</a>
-                      <a target="_blank" href="https://master--imaginative-naiad-fd3a8a.netlify.app/">Live link</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-card">
-              <div class="content">
-                <div class="front" style="background-image: url('img/Rectangle\ 301.png')">
-                  <div class="inner">
-                    <h2>Artsy</h2>
-                    <div class="tools">
-                      <h4>React</h4>
-                      <h4>Redux</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="back">
-                  <div class="inner">
-                    <div class="description">
-                      <p>My designed ecommerce website offers a personalized, 
-                        easy-to-use platform for customers to purchase a wide 
-                        range of products with advanced search options, fast 
-                        shipping and secure checkout.
-                      </p>
-                    </div>
-                    <div class="project-links">
-                      <a target="_blank" href="https://github.com/Emmancipated/Artsy">Source Code</a>
-                      <a target="_blank" href="https://master--dynamic-meringue-bc6b20.netlify.app/">Live link</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="project-card">
-              <div class="content">
-                <div class="front" style="background-image: url('img/graciousinfinity.jpg')">
-                    <div class="inner">
-                      <h2>Gracious Farm</h2>
-                      <div class="tools">
-                        <h4>Html</h4>
-                        <h4>Css</h4>
-                        <h4>Javascript</h4>
-                      </div>
-                    </div>
-                </div>
-                <div class="back">
-                    <div class="inner">
-                      <div class="description">
-                        <p>The agricultural website I developed offers a convenient platform 
-                          for customers to purchase a wide range of agricultural products, with 
-                          advanced search options and fast shipping. It also has a user-friendly 
-                          interface and secure checkout process.
-                        </p>
-                      </div>
-                      <div class="project-links">
-                        <a target="_blank" href="https://github.com/Emmancipated/graciousinfinity">Source Code</a>
-                        <a target="_blank" href="https://emmancipated.github.io/graciousinfinity/">Live link</a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="project-card">
-              <div class="content">
-                <div class="front" style="background-image: url('img/ripple-blog.png')">
-                      <div class="inner">
-                        <h2>Ripple Blog</h2>
-                        <div class="tools">
-                          <h4>React</h4>
-                        </div>
-                      </div>
-                </div>
-                <div class="back">
-                      <div class="inner">
-                        <div class="description">
-                          <p>This is blog site feeding off from techcrunch api for contents and 
-                            up to date with all the tech news. It is a user friendly and fast website.
-                          </p>
-                        </div>
-                        <div class="project-links">
-                          <a target="_blank" href="https://github.com/Emmancipated/flutterwave-project">Source Code</a>
-                          <a target="_blank" href="https://papaya-sunflower-c713c1.netlify.app/">Live link</a>
-                        </div>
-                      </div>
-                </div>
-              </div>
-            </div>
-  
-            <div class="project-card">
-              <div class="content">
-                <div class="front" style="background-image: url('img/Rectangle\ 239.png')">
-                        <div class="inner">
-                          <h2>Fizz-Bizz</h2>
-                          <div class="tools">
-                            <h4>MongoDB</h4>
-                            <h4>Express</h4>
-                            <h4>NodeJs</h4>
-                            <h4>Html</h4>
-                          </div>
-                        </div>
-                </div>
-                <div class="back">
-                        <div class="inner">
-                          <div class="description">
-                            <p>Join our vibrant community on our forum website, where users 
-                              can discuss a variety of topics and share their ideas and experiences. 
-                              Create an account and start participating today!
-                            </p>
-                          </div>
-                          <div class="project-links">
-                            <a target="_blank" href="https://github.com/Emmancipated/fizzbizz-forum">Source Code</a>
-                            <a target="_blank" href="https://fizzbizz-forum.herokuapp.com/">Live link</a>
-                          </div>
-                        </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="footer">
-          <div id="contacts">
-            <div class="footer-contacts">
-              <div class="icon twitter"><a target="_blank" href="https://mobile.twitter.com/emmancipatedOne"><i class="icon ion-logo-twitter"></i>Twitter</a></div>
-              <div class="icon github"><a target="_blank" href="https://github.com/Emmancipated"><i class="icon ion-logo-github"></i>Github</a></div>
-              <div class="icon linkedin"><a target="_blank" href="https://www.linkedin.com/in/emmanuel-kalu-811b14194/"><i class="icon ion-logo-linkedin"></i>LinkedIn</a></div>
-              <div class="icon email"><a href="mailto: emmanuelkaluck@gmail.com"><i class="icon ion-md-mail"></i>Email</a></div>
-            </div>
-          </div>
-        <div class="copyright">
-          All rights reserved &copy; <span id="footer-year"></span> Emmanuel Kalu
-        </div>
-        </section>
       </div>
-    </div>
-  </main>      
-  <script src="index.js"></script>
 
+      <div class="hero-visual">
+        <canvas id="renderCanvas"></canvas>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I am a self-motivated and hardworking individual passionate about web development and technology. I have
+              a strong attention to detail and am dedicated to delivering high-quality work.</p>
+            <p>If you need a new website or an upgrade to an existing one, I will help bring your vision to life using
+              modern technologies and best practices.</p>
+          </div>
+
+          <div class="skills-container">
+            <h3>My Tech Stack</h3>
+            <div class="tech-grid">
+              <div class="tech-item"><i class="icon ion-logo-html5"></i> HTML</div>
+              <div class="tech-item"><i class="icon ion-logo-css3"></i> CSS</div>
+              <div class="tech-item"><i class="icon ion-logo-javascript"></i> JavaScript</div>
+              <div class="tech-item"><i class="icon ion-logo-react"></i> React</div>
+              <div class="tech-item"><i class="icon ion-logo-sass"></i> SASS</div>
+              <div class="tech-item"><i class="icon ion-md-git-branch"></i> Git</div>
+              <div class="tech-item"><i class="icon ion-logo-nodejs"></i> Node.js</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Hover over the cards to see details</p>
+
+        <div class="projects-container">
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <div class="footer-content">
+        <h2 class="contact-header">Let's build something amazing.</h2>
+        <div class="social-links">
+          <a target="_blank" href="https://mobile.twitter.com/emmancipatedOne"><i class="icon ion-logo-twitter"></i></a>
+          <a target="_blank" href="https://github.com/Emmancipated"><i class="icon ion-logo-github"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/in/emmanuel-kalu-811b14194/"><i
+              class="icon ion-logo-linkedin"></i></a>
+          <a href="mailto:emmanuelkaluck@gmail.com"><i class="icon ion-md-mail"></i></a>
+        </div>
+        <p class="copyright">All rights reserved &copy; <span id="footer-year"></span> Emmanuel Kalu</p>
+      </div>
+    </section>
+
+  </main>
+  <script type="module" src="index.js"></script>
 </body>
+
 </html>
