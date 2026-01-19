@@ -1,33 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmanuel Kalu | Full Stack Developer</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emmanuel Kalu | Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" type="image/png" href="./favicon.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700;800&display=swap"
-    rel="stylesheet">
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
 
-  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-  <script src="https://cdn.babylonjs.com/babylon.js"></script>
-  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
-        "cannon-es": "https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js"
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+          "cannon-es": "https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js"
+        }
       }
-    }
-  </script>
+    </script>
 
-  <!-- <script type="importmap">
+    <!-- <script type="importmap">
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
@@ -36,94 +39,136 @@
         }
     </script> -->
 
-  <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <nav class="glass-nav">
+      <h1 class="logo">EK<span class="dot">.</span></h1>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contacts">Contact</a></li>
+      </ul>
+    </nav>
 
-  <nav class="glass-nav">
-    <h1 class="logo">EK<span class="dot">.</span></h1>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contacts">Contact</a></li>
-    </ul>
-  </nav>
+    <main>
+      <section id="hero">
+        <div class="hero-content">
+          <h3 class="subtitle">Hello, I'm</h3>
+          <h1 class="title">Emmanuel <span class="highlight">Kalu</span></h1>
+          <h2 class="role">
+            I build <span class="typewriter"></span
+            ><span class="cursor">|</span>
+          </h2>
+          <p class="description">
+            A skilled web developer with a passion for creating visually
+            stunning and highly functional digital experiences.
+          </p>
 
-  <main>
-    <section id="hero">
-      <div class="hero-content">
-        <h3 class="subtitle">Hello, I'm</h3>
-        <h1 class="title">Emmanuel <span class="highlight">Kalu</span></h1>
-        <h2 class="role">I build <span class="typewriter"></span><span class="cursor">|</span></h2>
-        <p class="description">A skilled web developer with a passion for creating visually stunning and highly
-          functional digital experiences.</p>
-
-        <div class="hero-btns">
-          <a href="#projects" class="btn primary">View Projects</a>
-          <a href="#contacts" class="btn secondary">Get In Touch</a>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <canvas id="renderCanvas"></canvas>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>I am a self-motivated and hardworking individual passionate about web development and technology. I have
-              a strong attention to detail and am dedicated to delivering high-quality work.</p>
-            <p>If you need a new website or an upgrade to an existing one, I will help bring your vision to life using
-              modern technologies and best practices.</p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contacts" class="btn secondary">Get In Touch</a>
           </div>
+        </div>
 
-          <div class="skills-container">
-            <h3>My Tech Stack</h3>
-            <div class="tech-grid">
-              <div class="tech-item"><i class="icon ion-logo-html5"></i> HTML</div>
-              <div class="tech-item"><i class="icon ion-logo-css3"></i> CSS</div>
-              <div class="tech-item"><i class="icon ion-logo-javascript"></i> JavaScript</div>
-              <div class="tech-item"><i class="icon ion-logo-react"></i> React</div>
-              <div class="tech-item"><i class="icon ion-logo-sass"></i> SASS</div>
-              <div class="tech-item"><i class="icon ion-md-git-branch"></i> Git</div>
-              <div class="tech-item"><i class="icon ion-logo-nodejs"></i> Node.js</div>
+        <div class="hero-visual">
+          <canvas id="renderCanvas"></canvas>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                I am a self-motivated and hardworking individual passionate
+                about web development and technology. I have a strong attention
+                to detail and am dedicated to delivering high-quality work.
+              </p>
+              <p>
+                If you need a new website or an upgrade to an existing one, I
+                will help bring your vision to life using modern technologies
+                and best practices.
+              </p>
+            </div>
+
+            <div class="skills-container">
+              <h3>My Tech Stack</h3>
+              <div class="tech-grid">
+                <div class="tech-item">
+                  <i class="icon ion-logo-html5"></i> HTML
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-logo-css3"></i> CSS
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-logo-javascript"></i> JavaScript
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-logo-react"></i> React
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-logo-sass"></i> SASS
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-md-git-branch"></i> Git
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-logo-nodejs"></i> Node.js
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-logo-mongodb"></i> MongoDB
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-logo-express"></i> NextJs
+                </div>
+                <div class="tech-item">
+                  <i class="icon ion-logo-express"></i> WordPress
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Hover over the cards to see details</p>
+      <section id="projects">
+        <div class="container">
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-subtitle">Hover over the cards to see details</p>
 
-        <div class="projects-container">
+          <div class="projects-container"></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contacts">
-      <div class="footer-content">
-        <h2 class="contact-header">Let's build something amazing.</h2>
-        <div class="social-links">
-          <a target="_blank" href="https://mobile.twitter.com/emmancipatedOne"><i class="icon ion-logo-twitter"></i></a>
-          <a target="_blank" href="https://github.com/Emmancipated"><i class="icon ion-logo-github"></i></a>
-          <a target="_blank" href="https://www.linkedin.com/in/emmanuel-kalu-811b14194/"><i
-              class="icon ion-logo-linkedin"></i></a>
-          <a href="mailto:emmanuelkaluck@gmail.com"><i class="icon ion-md-mail"></i></a>
+      <section id="contacts">
+        <div class="footer-content">
+          <h2 class="contact-header">Let's build something amazing.</h2>
+          <div class="social-links">
+            <a target="_blank" href="https://mobile.twitter.com/emmancipatedOne"
+              ><i class="icon ion-logo-twitter"></i
+            ></a>
+            <a target="_blank" href="https://github.com/Emmancipated"
+              ><i class="icon ion-logo-github"></i
+            ></a>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/emmanuel-kalu-811b14194/"
+              ><i class="icon ion-logo-linkedin"></i
+            ></a>
+            <a href="mailto:emmanuelkaluck@gmail.com"
+              ><i class="icon ion-md-mail"></i
+            ></a>
+          </div>
+          <p class="copyright">
+            All rights reserved &copy; <span id="footer-year"></span> Emmanuel
+            Kalu
+          </p>
         </div>
-        <p class="copyright">All rights reserved &copy; <span id="footer-year"></span> Emmanuel Kalu</p>
-      </div>
-    </section>
-
-  </main>
-  <script type="module" src="index.js"></script>
-</body>
-
+      </section>
+    </main>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>

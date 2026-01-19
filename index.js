@@ -36,7 +36,6 @@
 // }
 // document.addEventListener("DOMContentLoaded", typeEffect);
 
-
 // /* =========================================
 //    3. HIGH-END BABYLON 3D SCENE
 //    ========================================= */
@@ -177,12 +176,7 @@
 //   engine.resize();
 // });
 
-
-
-
 // import * as THREE from 'three';
-
-
 
 // // ============================================================================
 // // THREE.JS 3D EFFECTS SCRIPT
@@ -581,24 +575,13 @@
 //   initThreeJS()
 // })
 
-
-
-
-
-
-
-
-
-
-
-
 "use strict";
 import { projects } from "./constants/projects.js";
 
 /* =========================================
    1. UTILITIES & DATE
    ========================================= */
-const footerYear = document.querySelector('#footer-year');
+const footerYear = document.querySelector("#footer-year");
 if (footerYear) {
   footerYear.innerHTML = new Date().getFullYear();
 }
@@ -633,14 +616,24 @@ const typeEffect = () => {
     }
     setTimeout(typeEffect, 1200);
   }
-}
+};
 document.addEventListener("DOMContentLoaded", typeEffect);
 
 const projectsContainer = document.querySelector(".projects-container");
-projects.forEach(project => {
+projects.forEach((project) => {
   const projectCard = document.createElement("div");
   projectCard.classList.add("project-card");
-  const tools = project.tools.map(tool => `<span class="pill">${tool}</span>`).join("");
+  const tools = project.tools
+    .map((tool) => `<span class="pill">${tool}</span>`)
+    .join("");
+
+  // Show the Code link only when project.privateKey is truthy
+  const codeLink = project.private
+    ? ``
+    : `<a target="_blank" href="${project.link}" class="link-btn github">
+                      <i class="icon ion-logo-github"></i> Code
+                    </a>`;
+
   projectCard.innerHTML = `
     <div class="content">
       <div class="front" style="background-image: url('${project.image}')">
@@ -658,9 +651,7 @@ projects.forEach(project => {
                     <p>${project.description}</p>
                   </div>
                   <div class="project-links">
-                    <a target="_blank" href="${project.link}" class="link-btn github">
-                      <i class="icon ion-logo-github"></i> Code
-                    </a>
+                    ${codeLink}
                     <a target="_blank" href="${project.live}" class="link-btn live">
                       <i class="icon ion-md-open"></i> Live
                     </a>
@@ -682,7 +673,7 @@ const engine = new BABYLON.Engine(canvas, true, {
   preserveDrawingBuffer: true,
   stencil: true,
   disableWebGL2Support: false,
-  antialias: false // We will handle AA in the pipeline for better control
+  antialias: false, // We will handle AA in the pipeline for better control
 });
 
 const createScene = () => {
@@ -692,16 +683,31 @@ const createScene = () => {
   scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
 
   // 2. Camera
-  const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 10, new BABYLON.Vector3(0, 0, 0), scene);
+  const camera = new BABYLON.ArcRotateCamera(
+    "camera",
+    -Math.PI / 2,
+    Math.PI / 2.5,
+    10,
+    new BABYLON.Vector3(0, 0, 0),
+    scene,
+  );
   camera.minZ = 0.1;
 
   // 3. LIGHTING (Crucial for realism)
   // A. Ambient Light (Soft base)
-  const hemiLight = new BABYLON.HemisphericLight("hemi", new BABYLON.Vector3(0, 1, 0), scene);
+  const hemiLight = new BABYLON.HemisphericLight(
+    "hemi",
+    new BABYLON.Vector3(0, 1, 0),
+    scene,
+  );
   hemiLight.intensity = 0.3;
 
   // B. Moving Point Light (Creates specular highlights)
-  const pointLight = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(5, 5, 5), scene);
+  const pointLight = new BABYLON.PointLight(
+    "pointLight",
+    new BABYLON.Vector3(5, 5, 5),
+    scene,
+  );
   pointLight.intensity = 0.8;
   pointLight.diffuse = new BABYLON.Color3(0.39, 1, 0.85); // Cyan tint
 
@@ -712,7 +718,7 @@ const createScene = () => {
     "defaultPipeline",
     true, // HDR
     scene,
-    [camera]
+    [camera],
   );
 
   pipeline.samples = 4; // 4x MSAA Anti-Aliasing (Smooth edges)
@@ -736,7 +742,11 @@ const createScene = () => {
   pipeline.grain.animated = true;
 
   // 5. THE CYBER CORE (Wireframe with Fresnel)
-  const core = BABYLON.MeshBuilder.CreatePolyhedron("core", { type: 2, size: 2.5 }, scene);
+  const core = BABYLON.MeshBuilder.CreatePolyhedron(
+    "core",
+    { type: 2, size: 2.5 },
+    scene,
+  );
 
   const coreMat = new BABYLON.StandardMaterial("coreMat", scene);
   coreMat.wireframe = true;
@@ -753,7 +763,11 @@ const createScene = () => {
   core.material = coreMat;
 
   // 6. THE INNER CORE (Glass/Energy Sphere)
-  const innerCore = BABYLON.MeshBuilder.CreateSphere("inner", { diameter: 2.2, segments: 32 }, scene);
+  const innerCore = BABYLON.MeshBuilder.CreateSphere(
+    "inner",
+    { diameter: 2.2, segments: 32 },
+    scene,
+  );
   const innerMat = new BABYLON.StandardMaterial("innerMat", scene);
 
   innerMat.diffuseColor = new BABYLON.Color3(0, 0, 0);
@@ -780,7 +794,11 @@ const createScene = () => {
 
   for (let i = 0; i < particleCount; i++) {
     // Using very low segments for performance since they are tiny
-    const p = BABYLON.MeshBuilder.CreatePolyhedron("p" + i, { type: 1, size: 0.05 }, scene);
+    const p = BABYLON.MeshBuilder.CreatePolyhedron(
+      "p" + i,
+      { type: 1, size: 0.05 },
+      scene,
+    );
     p.material = particleMat;
 
     // Spherical distribution
@@ -797,8 +815,8 @@ const createScene = () => {
       theta: theta,
       phi: phi,
       radius: radius,
-      speed: (Math.random() * 0.005) + 0.002,
-      opacityOffset: Math.random() * 100
+      speed: Math.random() * 0.005 + 0.002,
+      opacityOffset: Math.random() * 100,
     };
 
     particles.push(p);
@@ -833,16 +851,23 @@ const createScene = () => {
     innerCore.scaling = new BABYLON.Vector3(scale, scale, scale);
 
     // Animate Particles
-    particles.forEach(p => {
+    particles.forEach((p) => {
       // Orbit
       p.customData.theta += p.customData.speed;
 
-      p.position.x = p.customData.radius * Math.sin(p.customData.phi) * Math.cos(p.customData.theta);
-      p.position.y = p.customData.radius * Math.sin(p.customData.phi) * Math.sin(p.customData.theta);
+      p.position.x =
+        p.customData.radius *
+        Math.sin(p.customData.phi) *
+        Math.cos(p.customData.theta);
+      p.position.y =
+        p.customData.radius *
+        Math.sin(p.customData.phi) *
+        Math.sin(p.customData.theta);
       p.position.z = p.customData.radius * Math.cos(p.customData.phi);
 
       // Twinkle effect (Scale/Visibility)
-      const twinkle = 0.5 + Math.abs(Math.sin(time * 3 + p.customData.opacityOffset)) * 0.5;
+      const twinkle =
+        0.5 + Math.abs(Math.sin(time * 3 + p.customData.opacityOffset)) * 0.5;
       p.scaling = new BABYLON.Vector3(twinkle, twinkle, twinkle);
     });
 
