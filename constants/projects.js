@@ -5,7 +5,7 @@ export const projects = [
       "Siral USA is a manufacturer that focuses on the development, customization and distribution of valves and actuators for light industrial and HVAC applications.",
     image: "img/siral.png",
     link: "https://github.com/Emmancipated/siral",
-    live: "https://dev.siralamericas.com/",
+    live: "https://siralamericas.com/",
     tools: ["HTML", "CSS", "ReactJS", "WordPress"],
     private: true,
   },
@@ -30,6 +30,26 @@ export const projects = [
     private: true,
   },
   {
+    name: "Goshen Shelters",
+    description:
+      "Non-profit organization providing shelter and support services for those in need.",
+    image: "img/goshenshelters.png",
+    link: "https://github.com/Emmancipated/goshenshelters",
+    live: "https://www.goshenshelters.org/",
+    tools: ["HTML", "CSS", "JavaScript"],
+    private: false,
+  },
+  {
+    name: "Cecure ID",
+    description:
+      "The AI-native reservation platform designed for public sector and commercial organisations everywhere. GDPR compliant. WCAG accessible. Effortlessly scalable",
+    image: "img/cecureid.png",
+    link: "https://github.com/Emmancipated/cecureid",
+    live: "https://cecureid.com/",
+    tools: ["NextJS", "AWS Lambda", "DynamoDB"],
+    private: true,
+  },
+  {
     name: "Meal More",
     description:
       "Beautifully designed recipe website, where you can learn how to prepare any delicacy via text and video instructions.",
@@ -49,26 +69,26 @@ export const projects = [
     tools: ["React", "Redux", "Stripe"],
     private: false,
   },
-  {
-    name: "Gracious Farm",
-    description:
-      "Agricultural website offering a convenient platform for customers to purchase fresh products with logistics support.",
-    image: "img/graciousinfinity.jpg",
-    link: "https://github.com/Emmancipated/graciousinfinity",
-    live: "https://emmancipated.github.io/graciousinfinity/",
-    tools: ["HTML", "CSS", "JavaScript"],
-    private: false,
-  },
-  {
-    name: "Ripple Blog",
-    description:
-      "Modern blog site feeding off the TechCrunch API for up-to-date tech news and content.",
-    image: "img/ripple-blog.png",
-    link: "https://github.com/Emmancipated/flutterwave-project",
-    live: "https://papaya-sunflower-c713c1.netlify.app/",
-    tools: ["React", "TechCrunch API"],
-    private: false,
-  },
+  // {
+  //   name: "Gracious Farm",
+  //   description:
+  //     "Agricultural website offering a convenient platform for customers to purchase fresh products with logistics support.",
+  //   image: "img/graciousinfinity.jpg",
+  //   link: "https://github.com/Emmancipated/graciousinfinity",
+  //   live: "https://emmancipated.github.io/graciousinfinity/",
+  //   tools: ["HTML", "CSS", "JavaScript"],
+  //   private: false,
+  // },
+  // {
+  //   name: "Ripple Blog",
+  //   description:
+  //     "Modern blog site feeding off the TechCrunch API for up-to-date tech news and content.",
+  //   image: "img/ripple-blog.png",
+  //   link: "https://github.com/Emmancipated/flutterwave-project",
+  //   live: "https://papaya-sunflower-c713c1.netlify.app/",
+  //   tools: ["React", "TechCrunch API"],
+  //   private: false,
+  // },
   //   {
   //     name: "Fizz Bizz",
   //     description:
